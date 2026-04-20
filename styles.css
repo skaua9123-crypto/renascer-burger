@@ -1,0 +1,522 @@
+:root {
+  --bg: #070707;
+  --bg-soft: #101010;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #f5efe7;
+  --muted: rgba(245, 239, 231, 0.76);
+  --accent: #ff9d2f;
+  --accent-soft: #ffc778;
+  --accent-red: #d55a37;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 18px;
+  --container: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 157, 47, 0.18), transparent 30%),
+    radial-gradient(circle at 100% 0%, rgba(213, 90, 55, 0.12), transparent 24%),
+    linear-gradient(180deg, #0a0a0a 0%, #040404 100%);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-left {
+  top: 8%;
+  left: -140px;
+  background: rgba(255, 157, 47, 0.3);
+}
+
+.ambient-right {
+  top: 38%;
+  right: -140px;
+  background: rgba(213, 90, 55, 0.22);
+}
+
+.landing {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 32px), var(--container));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.hero,
+.visual-section,
+.actions,
+.proof,
+.promo-info,
+.footer {
+  margin-bottom: 24px;
+}
+
+.hero,
+.gallery-card,
+.action-card,
+.proof-card,
+.promo-card,
+.info-card,
+.hero-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.hero {
+  border-radius: 32px;
+  padding: 22px;
+}
+
+.brand-chip,
+.eyebrow,
+.card-label,
+.gallery-tag,
+.proof-badge {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brand-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 157, 47, 0.12);
+  color: var(--accent-soft);
+  font-size: 0.72rem;
+  margin-bottom: 18px;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.proof-card h2,
+.promo-card h2 {
+  margin: 0;
+  font-family: "Arial Narrow", "Franklin Gothic Medium", "Segoe UI", sans-serif;
+  line-height: 0.96;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.8rem, 10vw, 5.2rem);
+  max-width: 10ch;
+}
+
+.eyebrow,
+.card-label,
+.gallery-tag,
+.proof-badge {
+  color: var(--accent-soft);
+  font-size: 0.72rem;
+  margin-bottom: 10px;
+}
+
+.hero-text,
+.section-heading h2,
+.gallery-copy p,
+.proof-card p,
+.promo-card p,
+.info-line span,
+.action-copy small,
+.hero-image-frame figcaption {
+  color: var(--muted);
+}
+
+.hero-text {
+  max-width: 32rem;
+  margin: 16px 0 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.brand-mark {
+  width: 78px;
+  height: 78px;
+  margin-bottom: 16px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.brand-mark img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  border-radius: 18px;
+  padding: 16px 20px;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, #ffb347 100%);
+  color: #1d1207;
+  box-shadow: 0 18px 40px rgba(255, 157, 47, 0.28);
+}
+
+.cta:hover,
+.action-card:hover {
+  transform: translateY(-2px);
+}
+
+.hero-card {
+  margin-top: 24px;
+  border-radius: var(--radius-xl);
+  padding: 14px;
+  overflow: hidden;
+}
+
+.hero-card-copy {
+  padding: 8px 8px 16px;
+}
+
+.hero-card h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+
+.hero-image-frame,
+.gallery-media {
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 157, 47, 0.14), rgba(0, 0, 0, 0.08)),
+    linear-gradient(135deg, #181818, #0d0d0d);
+}
+
+.hero-image-frame img,
+.gallery-media img {
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+}
+
+.media-fries img {
+  object-position: center bottom;
+}
+
+.hero-image-frame::after,
+.gallery-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.38) 100%);
+  pointer-events: none;
+}
+
+.hero-image-frame.is-fallback::before,
+.gallery-media.is-fallback::before {
+  content: "Adicione sua foto em assets";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  z-index: 1;
+}
+
+.hero-image-frame figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 1;
+  font-size: 0.88rem;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.9rem, 7vw, 3rem);
+  max-width: 13ch;
+}
+
+.gallery {
+  display: grid;
+  gap: 16px;
+}
+
+.gallery-card {
+  border-radius: var(--radius-xl);
+  padding: 12px;
+}
+
+.gallery-card-large .gallery-media img {
+  aspect-ratio: 4 / 4.8;
+}
+
+.gallery-copy {
+  padding: 14px 6px 8px;
+}
+
+.gallery-copy p,
+.proof-card p,
+.promo-card p,
+.info-line {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.actions {
+  border-radius: 32px;
+}
+
+.action-list {
+  display: grid;
+  gap: 14px;
+}
+
+.action-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 20px;
+  padding: 18px;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.action-card::after {
+  content: "";
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 157, 47, 0.45), transparent);
+}
+
+.action-highlight {
+  background: linear-gradient(135deg, rgba(255, 157, 47, 0.18), rgba(255, 255, 255, 0.05));
+  border-color: rgba(255, 157, 47, 0.24);
+}
+
+.action-icon {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 1.35rem;
+}
+
+.action-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.action-copy strong {
+  font-size: 1rem;
+}
+
+.proof-card,
+.info-card {
+  border-radius: var(--radius-xl);
+  padding: 24px 20px;
+}
+
+.proof-card {
+  display: grid;
+  gap: 18px;
+}
+
+.proof-card h2 {
+  font-size: clamp(1.9rem, 7vw, 2.9rem);
+  max-width: 14ch;
+  margin-bottom: 16px;
+}
+
+.proof-media {
+  position: relative;
+  margin: 0;
+  min-height: 280px;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 157, 47, 0.14), rgba(0, 0, 0, 0.08)),
+    linear-gradient(135deg, #181818, #0d0d0d);
+}
+
+.proof-media img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.proof-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.22));
+}
+
+.proof-media.is-fallback::before {
+  content: "Adicione sua foto em assets";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  z-index: 1;
+}
+
+.info-section {
+  display: grid;
+  gap: 16px;
+}
+
+.info-line {
+  display: grid;
+  gap: 5px;
+}
+
+.info-line + .info-line {
+  margin-top: 16px;
+}
+
+.footer {
+  padding: 8px 0 22px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tap-feedback {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tap-feedback.is-pressed {
+  transform: scale(0.985);
+}
+
+@media (min-width: 760px) {
+  .landing {
+    width: min(calc(100% - 48px), var(--container));
+    padding-top: 34px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 24px;
+    padding: 28px;
+  }
+
+  .hero-card {
+    margin-top: 0;
+  }
+
+  .gallery {
+    grid-template-columns: 1.15fr 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .gallery-card,
+  .gallery-card-large {
+    height: 100%;
+  }
+
+  .gallery-card-large {
+    grid-row: span 2;
+  }
+
+  .gallery-card-large .gallery-media {
+    height: calc(100% - 92px);
+  }
+
+  .action-list,
+  .info-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proof-card {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .cta,
+  .action-card,
+  .tap-feedback {
+    transition: none;
+  }
+}
