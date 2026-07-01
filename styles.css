@@ -1,19 +1,21 @@
 :root {
-  --bg: #070707;
-  --bg-soft: #101010;
-  --surface: rgba(255, 255, 255, 0.05);
-  --surface-strong: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.1);
-  --text: #f5efe7;
-  --muted: rgba(245, 239, 231, 0.76);
-  --accent: #ff9d2f;
-  --accent-soft: #ffc778;
-  --accent-red: #d55a37;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  --bg: #0a0a0a;
+  --bg-soft: #141210;
+  --surface: rgba(233, 228, 208, 0.06);
+  --surface-strong: rgba(233, 228, 208, 0.1);
+  --border: rgba(233, 228, 208, 0.14);
+  --text: #f0f0f0;
+  --muted: rgba(240, 240, 240, 0.74);
+  --accent: #ff5d02;
+  --accent-soft: #ff9455;
+  --sand: #e9e4d0;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
   --radius-xl: 28px;
   --radius-lg: 22px;
   --radius-md: 18px;
   --container: 1120px;
+  --font-display: "Antonio", "Arial Narrow", "Franklin Gothic Medium", sans-serif;
+  --font-body: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -28,11 +30,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(255, 157, 47, 0.18), transparent 30%),
-    radial-gradient(circle at 100% 0%, rgba(213, 90, 55, 0.12), transparent 24%),
-    linear-gradient(180deg, #0a0a0a 0%, #040404 100%);
+    radial-gradient(circle at top, rgba(255, 93, 2, 0.22), transparent 32%),
+    radial-gradient(circle at 100% 0%, rgba(233, 228, 208, 0.08), transparent 26%),
+    linear-gradient(180deg, #0f0d0b 0%, #050403 100%);
   color: var(--text);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-body);
 }
 
 img {
@@ -64,13 +66,13 @@ a {
 .ambient-left {
   top: 8%;
   left: -140px;
-  background: rgba(255, 157, 47, 0.3);
+  background: rgba(255, 93, 2, 0.32);
 }
 
 .ambient-right {
   top: 38%;
   right: -140px;
-  background: rgba(213, 90, 55, 0.22);
+  background: rgba(233, 228, 208, 0.14);
 }
 
 .landing {
@@ -97,7 +99,7 @@ a {
 .promo-card,
 .info-card,
 .hero-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(180deg, rgba(233, 228, 208, 0.08), rgba(233, 228, 208, 0.03));
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   backdrop-filter: blur(14px);
@@ -123,9 +125,10 @@ a {
   gap: 8px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255, 157, 47, 0.12);
+  background: rgba(255, 93, 2, 0.16);
   color: var(--accent-soft);
   font-size: 0.72rem;
+  font-weight: 600;
   margin-bottom: 18px;
 }
 
@@ -134,13 +137,16 @@ a {
 .proof-card h2,
 .promo-card h2 {
   margin: 0;
-  font-family: "Arial Narrow", "Franklin Gothic Medium", "Segoe UI", sans-serif;
-  line-height: 0.96;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.94;
+  letter-spacing: 0.01em;
 }
 
 .hero-copy h1 {
   font-size: clamp(2.8rem, 10vw, 5.2rem);
-  max-width: 10ch;
+  max-width: 12ch;
 }
 
 .eyebrow,
@@ -149,6 +155,7 @@ a {
 .proof-badge {
   color: var(--accent-soft);
   font-size: 0.72rem;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
@@ -176,13 +183,15 @@ a {
   margin-bottom: 16px;
   border-radius: 22px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(233, 228, 208, 0.18);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  background: #fff;
 }
 
 .brand-mark img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 6px;
 }
 
 .cta {
@@ -194,13 +203,14 @@ a {
   border-radius: 18px;
   padding: 16px 20px;
   font-weight: 700;
+  font-family: var(--font-body);
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .cta-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, #ffb347 100%);
-  color: #1d1207;
-  box-shadow: 0 18px 40px rgba(255, 157, 47, 0.28);
+  background: linear-gradient(135deg, var(--accent) 0%, #ff8a3d 100%);
+  color: #140900;
+  box-shadow: 0 18px 40px rgba(255, 93, 2, 0.32);
 }
 
 .cta:hover,
@@ -221,8 +231,8 @@ a {
 
 .hero-card h2 {
   margin: 0;
-  font-size: 1.4rem;
-  line-height: 1.15;
+  font-size: 1.5rem;
+  line-height: 1.1;
 }
 
 .hero-image-frame,
@@ -232,8 +242,8 @@ a {
   overflow: hidden;
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(180deg, rgba(255, 157, 47, 0.14), rgba(0, 0, 0, 0.08)),
-    linear-gradient(135deg, #181818, #0d0d0d);
+    linear-gradient(180deg, rgba(255, 93, 2, 0.16), rgba(0, 0, 0, 0.1)),
+    linear-gradient(135deg, #1c1815, #0d0b09);
 }
 
 .hero-image-frame img,
@@ -252,7 +262,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.38) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.4) 100%);
   pointer-events: none;
 }
 
@@ -265,7 +275,7 @@ a {
   place-items: center;
   padding: 20px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(240, 240, 240, 0.75);
   font-weight: 600;
   z-index: 1;
 }
@@ -284,7 +294,7 @@ a {
 
 .section-heading h2 {
   font-size: clamp(1.9rem, 7vw, 3rem);
-  max-width: 13ch;
+  max-width: 15ch;
 }
 
 .gallery {
@@ -339,12 +349,12 @@ a {
   inset: auto auto 0 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, rgba(255, 157, 47, 0.45), transparent);
+  background: linear-gradient(90deg, rgba(255, 93, 2, 0.5), transparent);
 }
 
 .action-highlight {
-  background: linear-gradient(135deg, rgba(255, 157, 47, 0.18), rgba(255, 255, 255, 0.05));
-  border-color: rgba(255, 157, 47, 0.24);
+  background: linear-gradient(135deg, rgba(255, 93, 2, 0.22), rgba(233, 228, 208, 0.05));
+  border-color: rgba(255, 93, 2, 0.28);
 }
 
 .action-icon {
@@ -354,7 +364,7 @@ a {
   display: grid;
   place-items: center;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(233, 228, 208, 0.08);
   font-size: 1.35rem;
 }
 
@@ -366,6 +376,7 @@ a {
 
 .action-copy strong {
   font-size: 1rem;
+  font-family: var(--font-body);
 }
 
 .proof-card,
@@ -381,7 +392,7 @@ a {
 
 .proof-card h2 {
   font-size: clamp(1.9rem, 7vw, 2.9rem);
-  max-width: 14ch;
+  max-width: 15ch;
   margin-bottom: 16px;
 }
 
@@ -392,8 +403,8 @@ a {
   border-radius: 24px;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(255, 157, 47, 0.14), rgba(0, 0, 0, 0.08)),
-    linear-gradient(135deg, #181818, #0d0d0d);
+    linear-gradient(180deg, rgba(255, 93, 2, 0.16), rgba(0, 0, 0, 0.1)),
+    linear-gradient(135deg, #1c1815, #0d0b09);
 }
 
 .proof-media img {
@@ -406,7 +417,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.22));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.24));
 }
 
 .proof-media.is-fallback::before {
@@ -417,7 +428,7 @@ a {
   place-items: center;
   padding: 20px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(240, 240, 240, 0.75);
   font-weight: 600;
   z-index: 1;
 }
@@ -430,6 +441,13 @@ a {
 .info-line {
   display: grid;
   gap: 5px;
+}
+
+.info-line strong {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-soft);
 }
 
 .info-line + .info-line {

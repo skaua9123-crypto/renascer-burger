@@ -2,23 +2,36 @@
 
 Landing page premium focada em conversao para pedidos no WhatsApp, pronta para usar como link da bio.
 
+Identidade visual atualizada em Jul/2026 com a nova marca Renascer Burger (logo, paleta e tipografia do manual de marca).
+
+## Identidade visual
+
+- **Laranja Vital** `#FF5D02` - cor principal
+- **Preto** `#000000` - base e contraste
+- **Areia Acolhedora** `#E9E4D0` - tom neutro e suave
+- **Branco Essencial** `#F0F0F0` - texto e respiro visual
+- **Tipografia de titulo:** Antonio (Google Fonts)
+- **Tipografia de texto:** Poppins (substituta gratuita da fonte Rota do manual de marca, mesma familia geometrica arredondada)
+
 ## Arquivos
 
 - `index.html`: estrutura da pagina
 - `styles.css`: visual, responsividade e animacoes
 - `script.js`: animacao de entrada e feedback de clique
-- `assets/`: pasta para as fotos da hamburgueria
+- `assets/`: pasta com o logo e as fotos da hamburgueria
 
 ## Onde trocar imagens
 
-Coloque as imagens dentro da pasta `assets/` com estes nomes:
+Imagens atuais dentro da pasta `assets/`:
 
-- `hero-burger.jpeg` -> foto segurando o hamburguer
-- `experience.jpeg` -> foto do cliente comendo
-- `stacked-burgers.jpeg` -> foto dos hamburgueres empilhados
-- `logo-renascer.jpeg` -> logo da marca
+- `logo-renascer.png` -> logo oficial (fundo transparente, use este por padrao)
+- `logo-renascer.jpg` -> logo oficial em fundo solido (fallback)
+- `hero-burger.jpeg` -> foto de destaque no hero
+- `batata-cheddar-bacon.jpeg` -> foto da batata carregada
+- `renascer-bbq.jpeg` -> foto do Renascer BBQ
+- `renascer-original.jpeg` -> foto usada na prova social
 
-Se preferir outros nomes, altere os `src` no arquivo `index.html`.
+Para trocar por fotos novas, basta substituir o arquivo mantendo o mesmo nome, ou alterar o `src` correspondente no `index.html`.
 
 ## Onde editar textos e links
 
@@ -26,11 +39,10 @@ Os comentarios no `index.html` mostram exatamente onde editar:
 
 - WhatsApp
 - Cardapio
-- Promocao
+- Como chegar
+- Instagram
 - Endereco
 - Horario
-- Instagram
-- Google Maps
 
 ## Como testar localmente
 
@@ -58,9 +70,3 @@ Nao precisa configurar build command nem output directory.
 5. O deploy sera feito como site estatico.
 
 Tambem nao precisa configurar build command.
-
-## Observacoes
-
-- A pagina foi pensada primeiro para mobile.
-- Se alguma imagem nao existir, o layout mostra um fallback visual elegante em vez de quebrar.
-- Para melhor conversao, mantenha a foto principal forte e bem iluminada.
